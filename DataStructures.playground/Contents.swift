@@ -1,11 +1,25 @@
 import UIKit
 
-var ds = Queue<Int>()
+var ds = LinkedList<Int>()
 
-ds.enqueue(1)
-ds.enqueue(2)
-print("removing \(ds.dequeue())...")
-print(ds)
-ds.enqueue(3)
-print(ds)
-print("first element: \(ds.peek())")
+ds.append(1)
+ds.append(3)
+
+print(ds.description)
+
+var n = ds.node(at: 0)
+ds.insert(2, after: n!)
+print(ds.description)
+
+ds.push(0)
+print(ds.description)
+
+ds.pop()
+print(ds.description)
+
+n = ds.node(at: 0)
+ds.remove(after: n!)
+print(ds.description)
+
+ds.removeLast()
+print(ds.description)
