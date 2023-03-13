@@ -7,26 +7,26 @@ import Foundation
  */
 
 public struct Stack<Element> {
-    private var array: [Element] = []
+    private var elements: [Element] = []
     
     public init(_ elements: [Element]) {
-        array = elements
+        self.elements = elements
     }
     
     /// Adds an element to the top of stack
     public mutating func push(_ value: Element) {
-        array.append(value)
+        elements.append(value)
     }
     
     /// Removes and returns the last element of the collection if exists, otherwise returns `nil`
     @discardableResult
     public mutating func pop() -> Element? {
-        array.popLast()
+        elements.popLast()
     }
     
     /// Gets the top most element if exists, otherwise returns `nil`
     public func peek() -> Element? {
-        array.last
+        elements.last
     }
 }
 
@@ -34,7 +34,7 @@ extension Stack: CustomStringConvertible {
     public var description: String {
         var result = ""
 
-        for char in array.reversed() {
+        for char in elements.reversed() {
             result += "| \(char) |\n"
         }
         result += "|___|"
