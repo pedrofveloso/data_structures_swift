@@ -1,14 +1,11 @@
 import UIKit
 
-var stack = Stack([1, 2, 3, 4])
+var ds = Queue<Int>()
 
-stack.push(5)
-
-print(stack.description)
-print(" ")
-
-stack.pop()
-print(stack.description)
-print(" ")
-
-print("topmost element -> \(stack.peek())")
+ds.enqueue(1)
+ds.enqueue(2)
+print("removing \(ds.dequeue())...")
+print(ds)
+ds.enqueue(3)
+print(ds)
+print("first element: \(ds.peek())")
