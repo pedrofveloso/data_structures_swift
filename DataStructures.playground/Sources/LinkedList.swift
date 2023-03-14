@@ -65,6 +65,7 @@ public struct LinkedList<Element> {
     }
     
     /// Removes the first element of the list and returns its value (if exists), otherwise returns `nil`
+    @discardableResult
     public mutating func pop() -> Element? {
         let value = head?.value
         head = head?.next
@@ -77,6 +78,7 @@ public struct LinkedList<Element> {
     }
     
     /// Removes an element after a given node and returns its value (if exists), otherwise returns `nil`
+    @discardableResult
     public mutating func remove(after node: Node<Element>) -> Element? {
         let removedValue = node.next?.value
 
@@ -90,6 +92,7 @@ public struct LinkedList<Element> {
     }
     
     /// Removes the last element of the list and returns its value (if exists), otherwise returns `nil`
+    @discardableResult
     public mutating func removeLast() -> Element? {
         let removedValue = tail?.value
 
