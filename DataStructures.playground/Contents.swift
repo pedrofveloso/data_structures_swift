@@ -1,24 +1,30 @@
 import UIKit
 
-var ds = LinkedList<Int>()
+var ds = DoublyLinkedList<Int>()
 
-ds.append(1)
-ds.append(3)
+ds.push(2)
+ds.push(1)
 
 print(ds.description)
 
-var n = ds.node(at: 0)
-ds.insert(2, after: n!)
+ds.append(4)
 print(ds.description)
 
-ds.push(0)
+var node = ds.node(at: 1)
+
+ds.insert(3, after: node!)
 print(ds.description)
 
 ds.pop()
 print(ds.description)
 
-n = ds.node(at: 0)
-ds.remove(after: n!)
+ds.removeLast()
+print(ds.description)
+
+node = ds.node(at: 1)
+ds.remove(after: node!)
+node = nil
+
 print(ds.description)
 
 ds.removeLast()
